@@ -19,8 +19,7 @@ class CreateSensorsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('number');
             $table->string('face');
-            $table->double('temperature', 5, 2);
-            $table->integer('created_at');
+            $table->timestamps();
         });
     }
 

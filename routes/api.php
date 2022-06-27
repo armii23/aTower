@@ -15,8 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::post('/setData', function (){
-    dd('here');
-});*/
-Route::post('/setData', [SensorController::class, 'index']);
+Route::post('/setData', [SensorController::class, 'store']);
 

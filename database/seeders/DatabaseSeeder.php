@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Sensor;
+use App\Models\Temperature;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,6 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Sensor::factory(30)->create();
-        //User::factory(10)->create();
+        Temperature::factory(30)->create();
     }
 }

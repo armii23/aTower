@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Enums\FaceList;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -16,35 +15,14 @@ class Sensor extends Model
      *
      * @var array
      */
-    protected $fillable = ['number', 'face', 'temperature', 'created_at'];
-
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = false;
-
-    /**
-     * The storage format of the model's date columns.
-     *
-     * @var string
-     */
-    protected $dateFormat = 'U';
+    protected $fillable = ['number', 'face'];
 
     /**
      * Get the faulty sensors for the sensor.
      * @return HasMany
      */
-    public function faultySensors(): HasMany
+    public function temperatures(): HasMany
     {
-        return $this->hasMany(FaultySensor::class);
+        return $this->hasMany(Temperature::class);
     }
-
-    /**
-     * @var string[]
-     */
-    /*protected $casts = [
-        'face' => FaceList::class,
-    ];*/
 }

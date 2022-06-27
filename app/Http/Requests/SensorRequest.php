@@ -48,15 +48,4 @@ class SensorRequest extends FormRequest
             'timestamp'   => 'required|numeric|between:'.~PHP_INT_MAX.','.PHP_INT_MAX,
         ];
     }
-
-    /**
-     *
-     * @return string[]
-     */
-    public function messages(){
-        return [
-            'face.required' => 'The Face field is required',
-        ];
-    }
-
 }
